@@ -10,6 +10,16 @@ describe("Objects", function(){
 			}	
 	});
 
+	it("shouldnt remove the property",function(){
+		delete obj.toString;
+		expect(typeof obj.toString).toEqual('function');
+	});
+
+	it("should remove the property",function(){
+		delete obj.id;
+		expect(obj.id).toBeUndefined();
+	});
+
 	it("should iterate by obj properties",function(){
 		var propertyName;
 		var propertyCount = 0;
