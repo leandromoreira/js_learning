@@ -1,4 +1,4 @@
-describe("Object literal", function(){
+describe("Objects", function(){
 	var obj;
 	beforeEach(function(){
 		obj = {className:'java.lang.Object',methods:['toString()','equals(Object o)','hashCode()','getClass()'],id:0,
@@ -8,6 +8,20 @@ describe("Object literal", function(){
 					instances:1
 				}
 			}	
+	});
+
+	it("should iterate by obj properties",function(){
+		var propertyName;
+		var propertyCount = 0;
+		for (propertyName in obj){
+			propertyCount++;
+		}
+		expect(5).toEqual(propertyCount);
+	});
+
+	it("should show the types based on properties",function(){
+		expect('number').toEqual(typeof obj.id);
+		expect('function').toEqual(typeof obj.toString);
 	});
 
 	it("should update value or augment if it not exists",function(){
