@@ -9,7 +9,14 @@ describe("Object literal", function(){
 				}
 			}	
 	});
-	
+
+	it("should update value or augment if it not exists",function(){
+		obj.id = 2;
+		expect(obj.id).toEqual(2);
+		obj.isRuby = true;
+		expect(obj.isRuby).toBeTruthy();
+	});	
+
 	it("tests the beforeEach",function(){
 		expect(obj.getClass.className).toEqual('java.lang.Class');
 	});
@@ -28,7 +35,7 @@ describe("Object literal", function(){
 		};
 		expect(cpu.brand).toEqual('MOS');
 		expect(cpu['name']).toEqual('6502');
-		expect(cpu.speed).toEqual(undefined);
+		expect(cpu.speed).toBeUndefined();;
 	});
 
 	it("should creates a 'complex object' graph",function(){
