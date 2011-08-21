@@ -15,7 +15,7 @@ describe("Object literal", function(){
 		expect(cpu['name']).toEqual('6502');
 		expect(cpu.speed).toEqual(undefined);
 	});
-	
+
 	it("creates a 'complex object' graph",function(){
 		var tv = {
 			brand:'any',
@@ -24,4 +24,15 @@ describe("Object literal", function(){
 		};
 		expect(tv.screen.size).toEqual(50);
 	});
+
+	it("should print default value if undefined it found",function(){
+		var joypad = {buttons:6,digital:1,analogic:2};
+		expect('none').toEqual(joypad.triggers || 'none');
+	});
+
+	it("should avoid the TypeError",function(){
+		var player = {name:'Mario',mainColor:'red',onJump:{}};
+		expect(undefined).toEqual(player.energy && player.energy.points);
+	});
+
 });
