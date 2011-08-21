@@ -1,3 +1,22 @@
+describe("Javascript e-learning",function(){
+
+describe("Functions",function(){
+	it("should create a simple function",function(){
+		var add = function(a,b){
+			return a + b;
+		};
+		expect('function').toEqual(typeof add);
+	});
+	it("should print the number of arguments",function(){
+		var fun = function(a,b,c){
+			return arguments.length;
+		}
+		var numberOfParameters = fun(1,2,3);
+		expect(3).toEqual(numberOfParameters);
+	});
+});
+
+
 describe("Objects", function(){
 	var obj;
 	beforeEach(function(){
@@ -81,4 +100,5 @@ describe("Objects", function(){
 		expect(undefined).toEqual(player.energy && player.energy.points);
 	});
 
+})
 });
