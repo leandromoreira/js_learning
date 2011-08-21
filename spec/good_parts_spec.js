@@ -1,4 +1,19 @@
 describe("Object literal", function(){
+	var obj;
+	beforeEach(function(){
+		obj = {className:'java.lang.Object',methods:['toString()','equals(Object o)','hashCode()','getClass()'],id:0,
+				toString:function(){return id},
+				getClass:{
+					className:'java.lang.Class',
+					instances:1
+				}
+			}	
+	});
+	
+	it("tests before :each function",function(){
+		expect(obj.getClass.className).toEqual('java.lang.Class');
+	});
+
 	it("create an empty object",function(){
 		var empty_object = {};
 		expect(empty_object).toEqual({});
