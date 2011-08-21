@@ -10,16 +10,16 @@ describe("Object literal", function(){
 			}	
 	});
 	
-	it("tests before :each function",function(){
+	it("tests the beforeEach",function(){
 		expect(obj.getClass.className).toEqual('java.lang.Class');
 	});
 
-	it("create an empty object",function(){
+	it("should creates an empty object",function(){
 		var empty_object = {};
 		expect(empty_object).toEqual({});
 	});
 	
-	it("create an ordinary object using json",function(){
+	it("should create an ordinary object using json",function(){
 		var cpu = {
 			brand: 'MOS',
 			name: '6502',
@@ -31,7 +31,7 @@ describe("Object literal", function(){
 		expect(cpu.speed).toEqual(undefined);
 	});
 
-	it("creates a 'complex object' graph",function(){
+	it("should creates a 'complex object' graph",function(){
 		var tv = {
 			brand:'any',
 			screen: {size:50,brand:'any'},
@@ -40,7 +40,7 @@ describe("Object literal", function(){
 		expect(tv.screen.size).toEqual(50);
 	});
 
-	it("should print default value if undefined it found",function(){
+	it("should print 'non' if undefined value was found",function(){
 		var joypad = {buttons:6,digital:1,analogic:2};
 		expect('none').toEqual(joypad.triggers || 'none');
 	});
